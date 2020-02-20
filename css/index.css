@@ -240,7 +240,6 @@ header .right {
   }
 }
 header .right h3 {
-  font-size: 5vh;
   position: relative;
   align-content: right;
 }
@@ -261,7 +260,7 @@ header .right h3 {
 }
 @media screen and (max-width: 800px) {
   header .right h3 {
-    font-size: 5vh;
+    font-size: 6vh;
   }
 }
 @media screen and (min-width: 500px) {
