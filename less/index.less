@@ -50,7 +50,7 @@ table {
 /* Set every element's box-sizing to border-box */
 * {
 	box-sizing: border-box;
-	border: 1px solid gray;
+	// border: 1px solid gray;
 }
 
 html, body {
@@ -73,12 +73,16 @@ html, body {
 	.allcaps(){
 		text-transform: uppercase;
 	}
+	.underlined(){
+		text-decoration: underline;
+	}
 /*MIXINS*/
 
 h1, h2, h3, h4, h5, h6{
 	color: @headingcolor;
 	.allcaps();
 	font-family: @font1;
+	.underlined();
 }	
 
 
@@ -92,28 +96,77 @@ header{
 	.top{
 		width: 80%;
 		margin: 3.5em;
-
+		@media screen and (min-width: 800px){
+				margin: 2.5em;
+			}//this closes media query 800px
+			@media screen and (min-width: 500px){
+				margin-top: 3.5em;
+			}//this closes media query 500px
+			@media screen and (min-width: 500px){
+				margin-left: 6%;
+			}//this closes media query 500px
 		h1{
+			
 			font-size: 15vh;
+			@media screen and (min-width: 800px){
+				font-size: 2vh;
+			}//this closes media query 800px
+			@media screen and (min-width: 500px){
+				font-size: 8vh;
+			}//this closes media query 500px
 			width: 80%;
 			position: relative;
+			
 		}//this closes the h1 tag
 		p{
 		margin: 2%;
+		@media screen and (min-width: 800px){
+			margin: 1%;	
+		}//this closes media query 800px
+		@media screen and (min-width: 500px){
+			margin: 1%;
+		}//this closes media query 500px
 		position: relative;
 		font-size: 6vh;
+		@media screen and (max-width: 800px){
+			font-size:	4vh;
+		}//this closes media query 800px
 		
 	}//this closes the p tag
 	}//this closes the .top class
 
 	.right{
-		width: 19%;
+		width: 24%;
+		@media screen and (min-width: 800px){
+			width: 20%;	
+		}//this closes media query 800px
 		margin-top: 8em;
+		@media screen and (min-width: 800px){
+			margin-top: 6em;	
+		}//this closes media query 800px
+		@media screen and (min-width: 500px){
+			margin-top: 5.8em;
+		}//this closes media query 500px
 		margin-right: 0;
 		h3{
+			@media screen and (min-width: 500px){
+				padding-right: 25%;
+			}//this closes media query 500px
+			@media screen and (min-width: 500px){
+				margin-right: 2%;
+			}//this closes media query 500px
+			@media screen and (min-width: 500px){
+				width:100%;
+			}//this closes media query 500px
 			font-size: 5vh;
 			position: relative;
 			align-content: right;
+			@media screen and (max-width: 800px){
+				font-size: 5vh;
+			}//this closes media query 800px
+			@media screen and (min-width: 500px){
+				font-size: 3vh;
+			}//this closes media query 500px
 		}//this closes the h3 tag
 	}//this closes the .right class
 
@@ -126,6 +179,7 @@ article{
 		img{
 			width: 88%;
 			justify-content: center;
+			border: 2px solid red;
 		}
 	}//this closes the div tag
 }//this closes the article
@@ -143,32 +197,113 @@ article{
 	}//this closes h2 tag
 	p{
 		width: 88%;
-		font-size: 1.8rem;
+		font-size: 1.1rem;
 		justify-content: center;
+		margin-top: 2%;
 	}
 }//this closes section .one
 
-.section .mid{
+.mid{
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
+	width: 100%;
 	.ldiv{
 		width: 48%;
+		@media screen and (min-width: 500px){
+			width: 100%;	
+		}//this closes media query 500px
 
 		h2{
 			font-size: 2rem;
+			text-align: center;
 		}//this closes the h2
+
 		p{
-			line-height: 1.5;
+			@media screen and (min-width: 500px){
+				margin-bottom: 6%;
+			}//this closes media query 500px
+			@media screen and (min-width: 500px){
+				text-align: center;
+			}//this closes media query 500px
+			margin: 2%;
+			font-size: 1.1rem;
+			line-height: 3;
+			@media screen and (min-width: 500px){
+				line-height: 1.5;
+			}//this closes media query 500px
 		}//this closes the p
 	}//this closes .ldiv
 	.rdiv{
 		width: 48%;
+		@media screen and (min-width: 500px){
+				width: 100%;
+		}//this closes media query 500px
+
 		h2{
 			font-size: 2rem;
+			text-align: center;
 		}//this closes the h2
 		p{
+			margin: 2%;
+			font-size: 1.1rem;
 			line-height: 1.5;
+			@media screen and (min-width: 500px){
+				line-height: 1;
+			}//this closes media query 500px
+			text-align: right;
+			@media screen and (min-width: 500px){
+				text-align: center;
+			}//this closes media query 500px
+			i{
+				font-weight: 700;
+			}
 		}//this closes the p
 	}//this closes .rdiv
-}//this closes .section .mid
+}//this closes .mid
 
+.bottom{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 4% 0% 8% 0%;
+	justify-content: center;
+	h2{
+		margin:5% 44%;
+		width:82%;
+		font-size: 2rem;
+	}//this closes h2 tag
+	div{
+		width: 20%;
+		@media screen and (min-width: 500px){
+			width: 100%;
+		}//this closes media query 500px
+		font-size: 1.1rem;
+		@media screen and (max-width: 800px){
+			font-size: .9rem;
+		}
+		text-align: center;
+		height: 30vh;
+		@media screen and (min-width: 500px){
+			height: 13vh;
+		}//this closes media query 500px
+		align-content: center;
+		border-left: 1px dotted red;
+		border-right: 1px dotted red;
+		p{
+			line-height: 2;
+			font-weight: 700;
+			@media screen and (max-width: 800px){
+				line-height: 1.2;
+			}//this closes media query 800px
+		}
+	}//this closes div
+}
+
+footer{
+	background-color: red;
+	height: 3vh;
+	@media screen and (min-width: 500px){
+		height: 7vh;	
+	}//this closes media query 500px
+}
