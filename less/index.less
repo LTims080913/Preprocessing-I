@@ -4,7 +4,7 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
+html, body, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -19,7 +19,6 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -50,25 +49,126 @@ table {
 
 /* Set every element's box-sizing to border-box */
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid gray;
 }
 
 html, body {
 	height: 100%;
 	background: pink;
+	width: 100%;
+
 	}
+/*GOOGLE FONTS*/
+@import url('https://fonts.googleapis.com/css?family=Sriracha&display=swap');
+/*GOOGLE FONTS*/
 
 /*VARIABLES*/
-	@allcaps{
-		text-transform: uppercase;
-	}
-	@headingcolor{
-		color: red;
-	}
+		
+	@font1: 'Sriracha', cursive;
+	@headingcolor: red;
 	
 /*VARIABLES*/
+/*MIXINS*/
+	.allcaps(){
+		text-transform: uppercase;
+	}
+/*MIXINS*/
 
 h1, h2, h3, h4, h5, h6{
 	color: @headingcolor;
+	.allcaps();
+	font-family: @font1;
 }	
+
+
+header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	height: 20vh;
+
+	.top{
+		width: 80%;
+		margin: 3.5em;
+
+		h1{
+			font-size: 15vh;
+			width: 80%;
+			position: relative;
+		}//this closes the h1 tag
+		p{
+		margin: 2%;
+		position: relative;
+		font-size: 6vh;
+		
+	}//this closes the p tag
+	}//this closes the .top class
+
+	.right{
+		width: 19%;
+		margin-top: 8em;
+		margin-right: 0;
+		h3{
+			font-size: 5vh;
+			position: relative;
+			align-content: right;
+		}//this closes the h3 tag
+	}//this closes the .right class
+
+}//this closes the header
+
+article{
+	div{
+		display: flex;
+		justify-content: center;
+		img{
+			width: 88%;
+			justify-content: center;
+		}
+	}//this closes the div tag
+}//this closes the article
+
+.one{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 4% 0% 8% 0%;
+	justify-content: center;
+	h2{
+		margin:0 44%;
+		width:82%;
+		font-size: 2rem
+	}//this closes h2 tag
+	p{
+		width: 88%;
+		font-size: 1.8rem;
+		justify-content: center;
+	}
+}//this closes section .one
+
+.section .mid{
+	display: flex;
+	justify-content: space-between;
+	.ldiv{
+		width: 48%;
+
+		h2{
+			font-size: 2rem;
+		}//this closes the h2
+		p{
+			line-height: 1.5;
+		}//this closes the p
+	}//this closes .ldiv
+	.rdiv{
+		width: 48%;
+		h2{
+			font-size: 2rem;
+		}//this closes the h2
+		p{
+			line-height: 1.5;
+		}//this closes the p
+	}//this closes .rdiv
+}//this closes .section .mid
 
